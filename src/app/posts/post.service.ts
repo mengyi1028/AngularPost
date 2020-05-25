@@ -14,7 +14,7 @@ export class PostService{
   getPosts() {
     this.http
       .get<{ message: string; posts: any }>(
-        "https://angular-lwbgz.run-us-west2.goorm.io/api/posts"
+        "https://sheltered-fjord-99718.herokuapp.com/api/posts"
       )
 	  .pipe(map((postData) => {
 		return postData.posts.map(post => {
@@ -37,7 +37,8 @@ export class PostService{
 	addPost(title: string, content: string) {
     const post: Post = { id: null, title: title, content: content };
     this.http
-      .post<{ message: string, postId: string }>("https://angular-lwbgz.run-us-west2.goorm.io/api/posts", post)
+      .post<{ message: string, postId: string }>(
+		"https://sheltered-fjord-99718.herokuapp.com/api/posts", post)
       .subscribe(responseData => {
        const id = responseData.postId;
 		post.id = id;
@@ -47,7 +48,7 @@ export class PostService{
   }
 	
 	deletePost(postId: string){
-		this.http.delete("https://angular-lwbgz.run-us-west2.goorm.io/api/posts/" + postId).subscribe(()=>{
+		this.http.delete("https://sheltered-fjord-99718.herokuapp.com/api/posts/" + postId).subscribe(()=>{
 			const updatedPosts = this.posts.filter(post => post.id !== postId);
 			this.posts = updatedPosts;
 			this.postsNew.next([...this.posts]);
