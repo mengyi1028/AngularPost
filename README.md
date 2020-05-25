@@ -1,3 +1,7 @@
+![image](https://github.com/mengyi1028/AngularPost/blob/master/P1.png)
+![image](https://github.com/mengyi1028/AngularPost/blob/master/P2.png)
+
+
 # MeanCourse
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
